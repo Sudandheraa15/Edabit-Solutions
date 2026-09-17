@@ -1,0 +1,45 @@
+// Is This a Right Angled Triangle?
+// Given three numbers, x, y and z, determine whether they are the edges of a right angled triangle.
+
+// Examples
+// rightTriangle(3, 4, 5) ➞ true
+// // This is the classic example of a "nice" right angled triangle.
+
+// rightTriangle(145, 105, 100) ➞ true
+// // This is a less famous example.
+
+// rightTriangle(70, 130, 110) ➞ false
+// // This isn't a right angled triangle.
+// Notes
+// Notice the largest side of the triangle might not be the last one passed to the function.
+// All numbers will be integers (whole numbers).
+
+public class Challenge {
+  public static boolean rightTriangle(int x, int y, int z) {
+	if(x>0 && y>0 && z>0){
+    if(x>=y && x>=z){
+      int n=x*x;
+      int m=y*y+z*z;
+      if(n==m){
+        return true;
+      }
+    }
+    if(y>=x && y>=z){
+      int n=y*y;
+      int m=x*x+z*z;
+      if(n==m){
+        return true;
+      }
+    }
+    if(z>=y && z>=x){
+      int n=z*z;
+      int m=y*y+x*x;
+      if(n==m){
+        return true;
+      }
+    }
+  }	 
+    
+    return false;
+  }
+}
